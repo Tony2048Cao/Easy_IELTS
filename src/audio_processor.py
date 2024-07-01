@@ -161,6 +161,58 @@ class AudioProcessor:
 				except Exception as e:
 						self.logger.error(f"Error changing volume: {e}")
 
+		def reduce_noise_by_ai_models(self, input_file, output_file):
+				'''
+				need adjustment
+				:param input_file:
+				:param output_file:
+				:return:
+				'''
+
+				try:
+						# 使用 Demucs 进行降噪
+						model = pretrained.get_model('htdemucs')
+						model.eval()
+						model.cpu()
+
+						wav, sr = torchaudio.load(input_file)
+
+						metadata_input_file = torchaudio.info(input_file)
+
+						# 如果是单声道，转换为立体声
+						# 检查 wav 的形状并调整
+						if wav.shape[0] == 1:
+								wav = wav.repeat(2, 1)
+						if len(wav.shape) == 2:
+								wav = wav.unsqueeze(0)  # 增加批次维度
+						with torch.no_grad():
+								sources = apply_model(model, wav, device='cpu', shifts=1, split=True)
+						denoised = sources[0, 0, :, :]  # Assuming the first source is the clean audio
+
+						# 保存降噪后的音频
+
+						# 归一化音频
+						max_amplitude = torch.abs(denoised).max()
+						normalized_waveform = denoised / max_amplitude
+
+						# 将音频缩放至-20DB
+						rms = torch.sqrt(torch.mean(normalized_waveform ** 2))
+						scalar = 10 ** (target_db / 20) / rms
+						scaled_waveform = normalized_waveform * scalar
+						mono_waveform = torch.mean(scaled_waveform, dim=0)
+
+						final_denoised = scaled_waveform
+						torchaudio.save(output_file, final_denoised, sr,
+										bits_per_sample=metadata_input_file.bits_per_sample,
+										encoding=metadata_input_file.encoding)
+
+						metadata_output_file = torchaudio.info(output_file)
+						# print(metadata_output_file)
+						self.logger.info(f"Noise reduced audio saved to {output_file}")
+
+				except Exception as e:
+						self.logger.error(f"Error reducing noise: {e}")
+
 		def recognize_audio(self, filename):
 				recognizer = sr.Recognizer()
 				try:
