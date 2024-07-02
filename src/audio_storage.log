@@ -1,0 +1,6 @@
+2024-07-02 16:06:15,427 - ERROR - Error saving the audio: [Errno 2] No such file or directory: 'recorded_audio.wav'
+2024-07-02 16:06:15,454 - INFO - Begin to play the audio file <6670117a9cf20e330affb1c4 -  final_audio.wav>
+2024-07-02 16:06:45,177 - INFO - Stop play the audio file <6670117a9cf20e330affb1c4 -  final_audio.wav>
+2024-07-02 16:08:32,870 - ERROR - Error saving the audio: [Errno 2] No such file or directory: 'recorded_audio.wav'
+2024-07-02 16:08:32,906 - INFO - Begin to play the audio file <6670117a9cf20e330affb1c4 -  final_audio.wav>
+2024-07-02 16:09:02,595 - INFO - Stop play the audio file <6670117a9cf20e330affb1c4 -  final_audio.wav>

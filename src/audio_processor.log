@@ -1,0 +1,125 @@
+2024-07-02 16:33:44,781 - INFO - Recording started
+2024-07-02 16:33:51,695 - INFO - Silence detected, stopping recording
+2024-07-02 16:33:51,729 - INFO - Recording saved to ./temp_storage/raw_2024-07-02-16-33-44.wav
+2024-07-02 16:33:51,732 - INFO - Audio volume adjusted to -20 dB and saved to ./temp_storage/final_2024-07-02-16-33-44.wav
+2024-07-02 16:33:51,857 - INFO - Recording started
+2024-07-02 16:33:58,775 - INFO - Silence detected, stopping recording
+2024-07-02 16:33:58,809 - INFO - Recording saved to ./temp_storage/final_2024-07-02-16-33-44.wav
+2024-07-02 16:33:58,810 - INFO - Recording stopped by user
+2024-07-02 16:36:33,008 - INFO - Recording started
+2024-07-02 16:40:16,322 - INFO - Recording started
+2024-07-02 16:40:26,389 - INFO - Silence detected, stopping recording
+2024-07-02 16:40:26,420 - INFO - Recording saved to ./temp_storage/raw_2024-07-02-16-40-16.wav
+2024-07-02 16:40:26,425 - INFO - Audio volume adjusted to -20 dB and saved to ./temp_storage/final_2024-07-02-16-40-16.wav
+2024-07-02 16:40:26,507 - INFO - Recording started
+2024-07-02 16:40:33,413 - INFO - Silence detected, stopping recording
+2024-07-02 16:40:33,445 - INFO - Recording saved to ./temp_storage/final_2024-07-02-16-40-16.wav
+2024-07-02 16:40:33,445 - INFO - Recording stopped by user
+2024-07-02 16:41:43,168 - INFO - Recording started
+2024-07-02 16:41:50,087 - INFO - Silence detected, stopping recording
+2024-07-02 16:41:50,118 - INFO - Recording saved to ./temp_storage/raw_2024-07-02-16-41-42.wav
+2024-07-02 16:41:50,118 - INFO - Recording stopped by user
+2024-07-02 16:41:50,121 - INFO - Audio volume adjusted to -20 dB and saved to ./temp_storage/final_2024-07-02-16-41-42.wav
+2024-07-02 16:41:50,203 - INFO - Recording started
+2024-07-02 16:41:57,124 - INFO - Silence detected, stopping recording
+2024-07-02 16:41:57,156 - INFO - Recording saved to ./temp_storage/final_2024-07-02-16-41-42.wav
+
+
+2024-07-02 16:43:48,390 - INFO - Recording started
+2024-07-02 16:43:55,303 - INFO - Silence detected, stopping recording
+2024-07-02 16:43:55,335 - INFO - Recording saved to ./temp_storage/raw_2024-07-02-16-43-48.wav
+2024-07-02 16:43:55,335 - INFO - Recording stopped by user
+2024-07-02 16:43:55,337 - INFO - Audio volume adjusted to -20 dB and saved to ./temp_storage/final_2024-07-02-16-43-48.wav
+2024-07-02 16:43:55,425 - INFO - Recording started
+2024-07-02 16:44:02,344 - INFO - Silence detected, stopping recording
+2024-07-02 16:44:02,375 - INFO - Recording saved to ./temp_storage/final_2024-07-02-16-43-48.wav
+2024-07-02 16:46:27,787 - INFO - Recording started
+2024-07-02 16:46:34,720 - INFO - Silence detected, stopping recording
+2024-07-02 16:46:34,758 - INFO - Recording saved to ./temp_storage/raw_2024-07-02-16-46-27.wav
+2024-07-02 16:46:34,758 - INFO - Recording stopped by user
+2024-07-02 16:46:34,760 - INFO - Audio volume adjusted to -20 dB and saved to ./temp_storage/final_2024-07-02-16-46-27.wav
+2024-07-02 16:46:34,840 - INFO - Recording started
+2024-07-02 16:46:41,774 - INFO - Silence detected, stopping recording
+2024-07-02 16:46:41,810 - INFO - Recording saved to ./temp_storage/final_2024-07-02-16-46-27.wav
+
+
+
+2024-07-02 16:48:19,367 - INFO - Recording started
+2024-07-02 16:48:26,276 - INFO - Silence detected, stopping recording
+2024-07-02 16:48:26,306 - INFO - Recording saved to ./temp_storage/raw_2024-07-02-16-48-19.wav
+2024-07-02 16:48:26,306 - INFO - Recording stopped by user
+2024-07-02 16:48:26,308 - INFO - Audio volume adjusted to -20 dB and saved to ./temp_storage/final_2024-07-02-16-48-19.wav
+2024-07-02 16:48:26,389 - INFO - Recording started
+2024-07-02 16:48:35,397 - INFO - Silence detected, stopping recording
+2024-07-02 16:48:35,431 - INFO - Recording saved to ./temp_storage/final_2024-07-02-16-48-19.wav
+2024-07-02 16:49:53,597 - INFO - Recording started
+2024-07-02 16:51:46,915 - INFO - Silence detected, stopping recording
+2024-07-02 16:51:46,945 - INFO - Recording saved to ./temp_storage/raw_2024-07-02-16-49-53.wav
+2024-07-02 16:52:02,414 - INFO - Recording stopped by user
+2024-07-02 16:52:02,422 - INFO - Audio volume adjusted to -20 dB and saved to ./temp_storage/final_2024-07-02-16-49-53.wav
+2024-07-02 16:52:02,624 - INFO - Recording started
+2024-07-02 16:54:13,924 - INFO - Recording started
+2024-07-02 16:57:32,942 - INFO - Recording started
+2024-07-02 16:57:38,760 - INFO - Silence detected, stopping recording
+2024-07-02 16:57:38,791 - INFO - Recording saved to ./temp_storage/raw_2024-07-02-16-57-32.wav
+2024-07-02 16:57:38,792 - INFO - Recording stopped by user
+2024-07-02 16:57:38,795 - INFO - Audio volume adjusted to -20 dB and saved to ./temp_storage/final_2024-07-02-16-57-32.wav
+2024-07-02 16:57:38,882 - INFO - Recording started
+2024-07-02 16:57:42,910 - INFO - Silence detected, stopping recording
+2024-07-02 16:57:42,942 - INFO - Recording saved to ./temp_storage/final_2024-07-02-16-57-32.wav
+2024-07-02 16:59:22,920 - INFO - Recording started
+2024-07-02 16:59:25,948 - INFO - Silence detected, stopping recording
+2024-07-02 16:59:25,982 - INFO - Recording saved to ./temp_storage/raw_2024-07-02-16-59-22.wav
+2024-07-02 16:59:25,982 - INFO - Recording stopped by user
+2024-07-02 16:59:25,984 - INFO - Audio volume adjusted to -20 dB and saved to ./temp_storage/final_2024-07-02-16-59-22.wav
+2024-07-02 16:59:26,066 - INFO - Recording started
+2024-07-02 16:59:29,094 - INFO - Silence detected, stopping recording
+2024-07-02 16:59:29,128 - INFO - Recording saved to ./temp_storage/final_2024-07-02-16-59-22.wav
+2024-07-02 17:01:08,494 - INFO - Recording started
+2024-07-02 17:01:11,532 - INFO - Silence detected, stopping recording
+2024-07-02 17:01:11,567 - INFO - Recording saved to ./temp_storage/raw_2024-07-02-17-01-08.wav
+2024-07-02 17:01:11,567 - INFO - Recording stopped by user
+2024-07-02 17:01:11,569 - INFO - Audio volume adjusted to -20 dB and saved to ./temp_storage/final_2024-07-02-17-01-08.wav
+2024-07-02 17:01:11,650 - INFO - Recording started
+2024-07-02 17:01:18,258 - INFO - Silence detected, stopping recording
+2024-07-02 17:01:18,293 - INFO - Recording saved to ./temp_storage/final_2024-07-02-17-01-08.wav
+2024-07-02 17:02:03,481 - INFO - Recording started
+2024-07-02 17:02:06,509 - INFO - Silence detected, stopping recording
+2024-07-02 17:02:06,540 - INFO - Recording saved to ./temp_storage/raw_2024-07-02-17-02-03.wav
+2024-07-02 17:02:06,542 - INFO - Audio volume adjusted to -20 dB and saved to ./temp_storage/final_2024-07-02-17-02-03.wav
+2024-07-02 17:02:06,621 - INFO - Recording started
+2024-07-02 17:02:09,649 - INFO - Silence detected, stopping recording
+2024-07-02 17:02:09,685 - INFO - Recording saved to ./temp_storage/final_2024-07-02-17-02-03.wav
+2024-07-02 17:03:05,365 - INFO - Recording started
+2024-07-02 17:03:08,391 - INFO - Silence detected, stopping recording
+2024-07-02 17:03:08,423 - INFO - Recording saved to ./temp_storage/raw_2024-07-02-17-03-05.wav
+2024-07-02 17:03:08,423 - INFO - Recording stopped by user
+2024-07-02 17:03:08,425 - INFO - Audio volume adjusted to -20 dB and saved to ./temp_storage/final_2024-07-02-17-03-05.wav
+2024-07-02 17:03:08,513 - INFO - Recording started
+2024-07-02 17:03:11,540 - INFO - Silence detected, stopping recording
+2024-07-02 17:03:11,573 - INFO - Recording saved to ./temp_storage/final_2024-07-02-17-03-05.wav
+2024-07-02 17:06:50,673 - INFO - Recording started
+2024-07-02 17:06:53,701 - INFO - Silence detected, stopping recording
+2024-07-02 17:06:53,735 - INFO - Recording saved to ./temp_storage/raw_2024-07-02-17-06-39.wav
+2024-07-02 17:07:12,441 - INFO - Recording stopped by user
+2024-07-02 17:07:22,722 - INFO - Audio volume adjusted to -20 dB and saved to ./temp_storage/final_2024-07-02-17-06-39.wav
+2024-07-02 17:08:01,802 - INFO - Recording started
+2024-07-02 17:08:04,830 - INFO - Silence detected, stopping recording
+2024-07-02 17:08:04,859 - INFO - Recording saved to ./temp_storage/final_2024-07-02-17-06-39.wav
+2024-07-02 17:08:28,167 - INFO - Recording started
+2024-07-02 17:08:31,196 - INFO - Silence detected, stopping recording
+2024-07-02 17:08:31,226 - INFO - Recording saved to ./temp_storage/raw_2024-07-02-17-08-22.wav
+2024-07-02 17:08:37,374 - INFO - Recording stopped by user
+2024-07-02 17:09:32,145 - INFO - Audio volume adjusted to -20 dB and saved to ./temp_storage/final_2024-07-02-17-08-22.wav
+2024-07-02 17:10:30,228 - INFO - Recording started
+2024-07-02 17:10:33,256 - INFO - Silence detected, stopping recording
+2024-07-02 17:10:33,287 - INFO - Recording saved to ./temp_storage/raw_2024-07-02-17-10-30.wav
+2024-07-02 17:10:33,287 - INFO - Recording stopped by user
+2024-07-02 17:10:33,289 - INFO - Audio volume adjusted to -20 dB and saved to ./temp_storage/final_2024-07-02-17-10-30.wav
+2024-07-02 17:10:35,072 - INFO - Recognized <./temp_storage/final_2024-07-02-17-10-30.wav> text: 
+2024-07-02 17:30:59,382 - INFO - Recording started
+2024-07-02 17:31:02,411 - INFO - Silence detected, stopping recording
+2024-07-02 17:31:02,441 - INFO - Recording saved to ./temp_storage/raw_2024-07-02-17-30-59.wav
+2024-07-02 17:31:02,441 - INFO - Recording stopped by user
+2024-07-02 17:31:02,444 - INFO - Audio volume adjusted to -20 dB and saved to ./temp_storage/final_2024-07-02-17-30-59.wav
+2024-07-02 17:31:03,997 - INFO - Recognized <./temp_storage/final_2024-07-02-17-30-59.wav> text: 
