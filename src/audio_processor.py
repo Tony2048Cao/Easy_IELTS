@@ -1,3 +1,5 @@
+import datetime
+
 import time
 import pyaudio
 import torchaudio
@@ -15,7 +17,7 @@ import logging
 from sympy.physics.control.control_plots import matplotlib
 
 
-class AudioProcessor:
+class AudioProcessor(object):
 	def __init__(self, log_file='audio_processor.log'):
 		self.is_recording = False
 		self.input_language = 'en'
@@ -25,11 +27,11 @@ class AudioProcessor:
 							format='%(asctime)s - %(levelname)s - %(message)s')
 		self.logger = logging.getLogger(__name__)
 
-	def record_audio(self, filename,
-					 sample_rate=44100,
-					 chunk_size=1024,
-					 silence_threshold=2,
-					 silence_duration=4):
+	def record_audio(self, filename: str,
+					 sample_rate: int = 44100,
+					 chunk_size: int = 1024,
+					 silence_threshold: int = 2,
+					 silence_duration: int = 3):
 		self.is_recording = True
 		audio_format = pyaudio.paInt16
 		channels = 1
@@ -44,7 +46,7 @@ class AudioProcessor:
 
 		self.logger.info("Recording started")
 		print("Recording...")
-		time.sleep(3)
+		# time.sleep(3)
 		frames = []
 		silence_chunks = 0
 
@@ -70,7 +72,10 @@ class AudioProcessor:
 			if silence_chunks > silence_chunk_count:
 				self.logger.info("Silence detected, stopping recording")
 				print("Silence detected, stopping recording...")
-				break
+
+				self.is_recording = False
+				print(f'{self.is_recording}')
+
 
 		stream.stop_stream()
 		stream.close()
@@ -90,7 +95,7 @@ class AudioProcessor:
 		self.logger.info("Recording stopped by user")
 		print("Recording stopped by user.")
 
-	def reduce_noise(self, input_file, output_file):
+	def reduce_noise(self, input_file: str, output_file: str):
 		"""
 		need adjustment
 		:param input_file:
@@ -144,7 +149,7 @@ class AudioProcessor:
 		except Exception as e:
 			self.logger.error(f"Error reducing noise: {e}")
 
-	def change_volume(self, input_file, output_file, target_db=-20):
+	def change_volume(self, input_file: str, output_file: str, target_db: int = -20):
 		try:
 			# 自动识别音频文件类型并加载
 			audio = AudioSegment.from_file(input_file)
@@ -161,9 +166,10 @@ class AudioProcessor:
 		except Exception as e:
 			self.logger.error(f"Error changing volume: {e}")
 
-	def reduce_noise_by_ai_models(self, input_file, output_file):  
+	def reduce_noise_by_ai_models(self, input_file: str, output_file: str, target_db: int = -20):
 		'''
 		need adjustment
+		:param target_db:
 		:param input_file:
 		:param output_file:
 		:return:
@@ -213,7 +219,7 @@ class AudioProcessor:
 		except Exception as e:
 			self.logger.error(f"Error reducing noise: {e}")
 
-	def recognize_audio(self, filename):
+	def recognize_audio(self, filename: str):
 		recognizer = sr.Recognizer()
 		try:
 			with sr.AudioFile(filename) as source:
@@ -236,7 +242,7 @@ class AudioProcessor:
 		except Exception as e:
 			self.logger.error(f"Error recognizing audio: {e}")
 
-	def create_test_audio(self, input_file, output_file):
+	def create_test_audio(self, input_file: str, output_file: str):
 		from pydub.generators import WhiteNoise
 		# 生成白噪音
 		noise = WhiteNoise().to_audio_segment(duration=20000)  # 20秒的白噪音
@@ -254,7 +260,7 @@ class AudioProcessor:
 		print(os.path.splitext(output_file))
 		combined.export(output_file, format=os.path.splitext(output_file)[1][1:])
 
-	def save_audio_plot(self, input_file, save_folder='./'):
+	def save_audio_plot(self, input_file: str, save_folder: str = './'):
 		try:
 			waveform, sample_rate = torchaudio.load(input_file)
 
@@ -297,14 +303,46 @@ class AudioProcessor:
 			self.logger.error(f"Error recognizing audio: {e}")
 
 
+class AudioProcessorApp(AudioProcessor):
+	def __init__(self, ):
+		super(AudioProcessorApp, self).__init__()
+
+
+def start_screen(audio_process_app: AudioProcessorApp, temp_storage_path: str = './temp_storage',
+				 saved_file_type='wav'):
+	print(f'----------Starting-----------')
+	if not os.path.exists(temp_storage_path):
+		os.makedirs(temp_storage_path)
+		print(f"Directory '{temp_storage_path}' created.")
+	else:
+		print(f"Directory '{temp_storage_path}' already exists.")
+
+	while True:
+		str_time = datetime.datetime.now().strftime(
+			"%Y-%m-%d-%H-%M-%S") + '.' + saved_file_type
+		raw_filename = temp_storage_path + '/' + 'raw_' + str_time
+
+		audio_process_app.record_audio(filename=raw_filename)
+		audio_process_app.stop_recording()
+
+		final_filename = temp_storage_path + '/' + 'final_' + str_time
+
+		audio_process_app.change_volume(input_file=raw_filename, output_file=final_filename)
+		audio_process_app.recognize_audio(filename=final_filename)
+		print('-'*20)
+
+		break
+
+
+
 # 示例用法
 if __name__ == "__main__":
-	audio_processor = AudioProcessor()
+	# audio_processor = AudioProcessor()
 
 	audio_filename = "temp/recorded_audio.wav"
 	noise_reduced_filename = "temp/noise_reduced_audio.wav"  # 可以指定不同的格式
 	final_audio_filename = "temp/final_audio.wav"  # 可以指定不同的格式
-	target_db = -20  # 目标分贝
+	db = -20  # 目标分贝
 
 	# 启动录音线程
 	# recording_thread = threading.Thread(target=audio_processor.record_audio, args=(audio_filename,))
@@ -321,16 +359,19 @@ if __name__ == "__main__":
 	# 等待录音线程结束
 	# recording_thread.join()
 
-	# 调整音量
-	audio_processor.change_volume(audio_filename, noise_reduced_filename, target_db)
-	# 降噪
-	audio_processor.reduce_noise(noise_reduced_filename, final_audio_filename)
+	# # 调整音量
+	# audio_processor.change_volume(audio_filename, noise_reduced_filename, db)
+	# # 降噪
+	# audio_processor.reduce_noise(noise_reduced_filename, final_audio_filename)
+	#
+	# audio_processor.save_audio_plot(input_file=audio_filename)
+	# audio_processor.save_audio_plot(input_file=noise_reduced_filename)
+	# audio_processor.save_audio_plot(input_file=final_audio_filename)
+	#
+	# # 识别录制的音频
+	# audio_processor.recognize_audio(audio_filename)
+	# audio_processor.recognize_audio(noise_reduced_filename)
+	# audio_processor.recognize_audio(final_audio_filename)
 
-	audio_processor.save_audio_plot(input_file=audio_filename)
-	audio_processor.save_audio_plot(input_file=noise_reduced_filename)
-	audio_processor.save_audio_plot(input_file=final_audio_filename)
-
-	# 识别录制的音频
-	audio_processor.recognize_audio(audio_filename)
-	audio_processor.recognize_audio(noise_reduced_filename)
-	audio_processor.recognize_audio(final_audio_filename)
+	test_app = AudioProcessorApp()
+	start_screen(audio_process_app=test_app)
