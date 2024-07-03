@@ -53,7 +53,6 @@ class UserRegisterForm(BaseModel):
 	username: constr(min_length=1)
 	password: constr(min_length=8)
 	email: EmailStr
-	full_name: constr(min_length=1)
 
 
 class UserLoginForm(BaseModel):
@@ -93,9 +92,8 @@ async def login(username: str = Form(...), password: str = Form(...)):
 
 
 @app.post("/register")
-async def register(username: str = Form(...), password: str = Form(...), email: str = Form(...),
-				   full_name: str = Form(...)):
-	form_data = UserRegisterForm(username=username, password=password, email=email, full_name=full_name)
+async def register(username: str = Form(...), password: str = Form(...), email: str = Form(...)):
+	form_data = UserRegisterForm(username=username, password=password, email=email)
 	existing_user = await get_user(form_data.username)
 	if existing_user:
 		raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Username already registered")
@@ -103,7 +101,6 @@ async def register(username: str = Form(...), password: str = Form(...), email: 
 	hashed_password = get_password_hash(form_data.password)
 	user = {
 		"username": form_data.username,
-		"full_name": form_data.full_name,
 		"email": form_data.email,
 		"hashed_password": hashed_password,
 		"disabled": False,
