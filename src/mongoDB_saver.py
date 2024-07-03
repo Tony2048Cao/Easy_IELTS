@@ -136,12 +136,19 @@ class AudioStorage:
 			self.logger.error(f"Error playing the audio: {e}")
 
 
+class AudioStorageApp(AudioStorage):
+	def __init__(self, mongodb_uri: str = MONGODB_URI,
+				 database_name: str = 'audio_storage',
+				 log_file: str = 'audio_storage.log'):
+		super(AudioStorageApp, self).__init__(mongodb_uri=mongodb_uri, database_name=database_name, log_file=log_file)
+
+
 # 示例用法
 if __name__ == "__main__":
 	path = 'recorded_audio.wav'
 	name = 'audio_storage'
 
-	audio_storage = AudioStorage(database_name=name)
+	audio_storage = AudioStorageApp()
 	test_property = audio_storage.get_audio_properties(file_path=path, show_details=True)
 	# print(str(test_property))
 	# audio_storage.save_audio(file_path=file_path)
